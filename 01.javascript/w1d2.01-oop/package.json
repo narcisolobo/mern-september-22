@@ -1,0 +1,13 @@
+{
+  "name": "w1d2.01-oop",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "You guys are already down with OOP, so there aren't any new concepts to cover. The four pillars of OOP remain the same no matter which language you're coding in.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
