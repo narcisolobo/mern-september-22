@@ -27,3 +27,12 @@ This algorithm is not suitable for large data sets as its average and worst case
 5. Move the "slot" to the appropriate position by shifting the values in the sorted section until the "slot" is placed correctly.
 6. Once the "slot" is in the correct position, fill it with the stored value.
 7. Repeat for all remaining indices in the unsorted section.
+
+## Merge Sort
+
+1. Create a merge function to merge two sorted arrays into a single sorted array.
+   - You do NOT need to work in place, it's okay to use a new array.
+2. Create a mergeSort function to sort the given array.
+   - Split the array in half and recursively merge the halves using the previously created merge function.
+   - Splitting of arrays stops when array can no longer be split.
+   - An array of 1 item is by definition sorted, so two arrays of 1 item can therefore be merged into a sorted array.
