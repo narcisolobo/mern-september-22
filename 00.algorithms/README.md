@@ -36,3 +36,15 @@ This algorithm is not suitable for large data sets as its average and worst case
    - Split the array in half and recursively merge the halves using the previously created merge function.
    - Splitting of arrays stops when array can no longer be split.
    - An array of 1 item is by definition sorted, so two arrays of 1 item can therefore be merged into a sorted array.
+
+## Quick Sort
+The Idea of QuickSort
+Quicksort is a fast sorting algorithm that works by splitting a large array of data into smaller sub-arrays. This implies that each iteration works by splitting the input into two components, sorting them, and then recombining them. For big datasets, the technique is highly efficient since its average and best-case complexity is `O(n*logn)`.
+
+It is one of the most effective general-purpose sorting algorithms available today. It works by recursively sorting the sub-lists to either side of a given pivot and dynamically shifting elements inside the list around that pivot.
+
+As a result, the quick sort method can be summarized in three steps:
+
+- Pick: Select an element.
+- Divide: Split the problem set, move smaller parts to the left of the pivot and larger items to the right.
+- Repeat and combine: Repeat the steps and combine the arrays that have previously been sorted.
