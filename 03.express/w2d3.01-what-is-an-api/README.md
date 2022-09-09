@@ -8,15 +8,12 @@ No other stack will teach us more about the nuts and bolts of the request-respon
 
 With that in mind, we should always strive to practice RESTful routing, both in our front-facing routes and our back-end APIs.
 
-Looking at the table below, which routes are strictly front-end, which are strictly back-end, and which are both?
-
-| Route Name | URL Path          | HTTP Method | Purpose                                     |
-|------------|-------------------|-------------|---------------------------------------------|
-| index      | /objects          | GET         | Display a list of all objects               |
-| new        | /objects/new      | GET         | Displays a form to create a new object      |
-| create     | /objects          | POST        | Creates a new object                        |
-| show       | /objects/:id      | GET         | Displays one specific object's details      |
-| edit       | /objects/:id/edit | GET         | Displays a form to edit one specific object |
-| update     | /objects/:id      | PUT         | Updates one specific object                 |
-| destroy    | /objects/:id      | DELETE      | Deletes one specific object                 |
-
+| Route Name | React Router      | Express API      | HTTP Method | Purpose                                     |
+|------------|-------------------|------------------|-------------|---------------------------------------------|
+| index      |      /objects     | /api/objects     | GET         | Display a list of all objects               |
+| new        |    /objects/new   |        N/A       | GET         | Displays a form to create a new object      |
+| create     |        N/A        | /api/objects     | POST        | Creates a new object                        |
+| show       |    /objects/:id   | /api/objects/:id | GET         | Displays one specific object's details      |
+| edit       | /objects/:id/edit |        N/A       | GET         | Displays a form to edit one specific object |
+| update     |        N/A        | /api/objects/:id | PUT         | Updates one specific object                 |
+| destroy    |        N/A        | /api/objects/:id | DELETE      | Deletes one specific object                 |
