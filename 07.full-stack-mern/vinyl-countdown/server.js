@@ -8,7 +8,10 @@ const colors = require('colors');
 colors.enable();
 
 const cors = require('cors');
-app.use(cors());
+app.use(express.json(), cors());
+
+const connectDb = require('./server/config/mongoose.config');
+connectDb();
 
 const recordRouter = require('./server/routes/record.routes');
 app.use('/api/records', recordRouter);
