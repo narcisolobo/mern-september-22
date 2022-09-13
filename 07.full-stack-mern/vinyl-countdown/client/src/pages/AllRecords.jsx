@@ -17,11 +17,11 @@ const AllRecords = () => {
           records.map((record) => {
             return (
               <tr key={record._id}>
-                <td>{record.title}</td>
+                <td><Link to={`/records/${record._id}`}>{record.title}</Link></td>
                 <td>{record.artist}</td>
                 <td className='text-end'>
                   <Link
-                    to={`/records/${record._id}`}
+                    to={`/records/${record._id}/edit`}
                     className="btn btn-warning btn-sm me-2"
                   >
                     Edit

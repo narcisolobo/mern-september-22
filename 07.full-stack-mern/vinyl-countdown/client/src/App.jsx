@@ -12,15 +12,17 @@ const App = () => {
     <div>
       <Nav />
       <div className="container">
-        <Routes>
-          <Route path={'/'} element={<Navigate to="/albums" />} />
-          <Route path={'/records'} element={<Records />}>
-            <Route index element={<AllRecords />} />
-            <Route path=":id" element={<ShowRecord />} />
-            <Route path="new" element={<NewRecord />} />
-            <Route path=":id/edit" element={<EditRecord />} />
-          </Route>
-        </Routes>
+        <div className="row">
+          <Routes>
+            <Route path={'/'} element={<Navigate to="/records" />} />
+            <Route path={'/records'} element={<Records />}>
+              <Route index element={<AllRecords />} />
+              <Route path=":id" element={<ShowRecord />} />
+              <Route path="new" element={<NewRecord />} />
+              <Route path=":id/edit" element={<EditRecord />} />
+            </Route>
+          </Routes>
+        </div>
       </div>
     </div>
   );
