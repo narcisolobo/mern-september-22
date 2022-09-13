@@ -1,22 +1,39 @@
-import { useOutletContext } from "react-router-dom";
+import { Link, useOutletContext } from 'react-router-dom';
 
 const AllRecords = () => {
   const { records } = useOutletContext();
 
   return (
-    <fieldset>
-      <legend>All Records</legend>
-      <ul>
+    <table className="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Album Title</th>
+          <th>Artist</th>
+          <th className='text-end'>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
         {records &&
-          records.map(record => {
+          records.map((record) => {
             return (
-              <li key={record._id}>{record.title}</li>
-            )
-          })
-        }
-      </ul>
-    </fieldset>
-  )
-}
+              <tr key={record._id}>
+                <td>{record.title}</td>
+                <td>{record.artist}</td>
+                <td className='text-end'>
+                  <Link
+                    to={`/records/${record._id}`}
+                    className="btn btn-warning btn-sm me-2"
+                  >
+                    Edit
+                  </Link>
+                  <button className="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+            );
+          })}
+      </tbody>
+    </table>
+  );
+};
 
 export default AllRecords;
