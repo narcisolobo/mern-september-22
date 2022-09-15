@@ -24,8 +24,8 @@ const students = [
     habits: ["doesn't wash dishes", 'hoards snacks', 'shows up late'],
   },
   {
-    firstName: 'FN4',
-    lastName: 'LN4',
+    firstName: 'Gonzo',
+    lastName: 'Great',
     habits: ['shows up early', 'helps peers', 'washes dishes'],
   },
 ];
