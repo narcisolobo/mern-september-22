@@ -1,5 +1,6 @@
-import { useReducer } from 'react';
+import { useContext, useReducer, useState } from 'react';
 import { Link, useNavigate, useOutletContext } from 'react-router-dom';
+import UserContext from '../context/UserContext';
 import axios from 'axios';
 import {
   INPUT_CHANGE,
@@ -8,6 +9,8 @@ import {
 } from '../reducers/formReducers';
 
 const Login = () => {
+  const { loginUser } = useContext(UserContext);
+  const [errors, setErrors] = useState({});
   const baseUrl = useOutletContext();
   const navigate = useNavigate();
   const [formState, dispatch] = useReducer(formReducer, initialLoginForm);
@@ -15,8 +18,16 @@ const Login = () => {
     e.preventDefault();
     axios
       .post(`${baseUrl}/login`, formState)
-      .then(() => navigate('/records'))
-      .catch(err => console.log(err));
+      .then((res) => {
+        console.log(res.data.user)
+        const { user } = res.data;
+        loginUser({
+          userId: user._id,
+          username: user.username,
+        });
+        navigate('/records')
+      })
+      .catch(err => setErrors(err.response.data.errors));
   };
 
   return (
@@ -44,6 +55,11 @@ const Login = () => {
                       })
                     }
                   />
+                  {errors.email && (
+                    <span className="form-text text-danger">
+                      {errors.email.message}
+                    </span>
+                  )}
                 </div>
                 <div className="mb-3">
                   <label htmlFor="password" className="form-label">
@@ -62,6 +78,11 @@ const Login = () => {
                       })
                     }
                   />
+                  {errors.password && (
+                    <span className="form-text text-danger">
+                      {errors.password.message}
+                    </span>
+                  )}
                 </div>
                 <div className="d-flex justify-content-end">
                   <input
@@ -73,7 +94,7 @@ const Login = () => {
               </form>
             </div>
           </div>
-          <div className="alert alert-light text-center">
+          <div className="alert text-center">
             Need an account?{' '}
             <Link to={'/users/register'}>Click here to register.</Link>
           </div>

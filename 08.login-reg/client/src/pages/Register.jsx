@@ -144,7 +144,7 @@ const Register = () => {
               </form>
             </div>
           </div>
-          <div className="alert alert-light text-center">
+          <div className="alert text-center">
             Have an account? <Link to={'/users/login'}>Click here to login.</Link>
           </div>
         </div>

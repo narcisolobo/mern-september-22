@@ -14,7 +14,7 @@ const UserProvider = ({ children }) => {
     dispatch({
       type: LOGIN,
       payload: {
-        userId: user._id,
+        userId: user.userId,
         username: user.username,
       },
     });
