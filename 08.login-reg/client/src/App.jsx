@@ -9,18 +9,16 @@ import AllRecords from './pages/AllRecords';
 
 const App = () => {
   return (
-    <div className="container">
-      <Routes>
-        <Route path="/" element={<Navigate to={'/users/login'} />} />
-        <Route path="/users" element={<Users />}>
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-        </Route>
-        <Route path='/records' element={<Records />}>
-          <Route index element={<AllRecords />} />
-        </Route>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigate to={'/users/login'} />} />
+      <Route path="/users" element={<Users />}>
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Route>
+      <Route path="/records" element={<Records />}>
+        <Route index element={<AllRecords />} />
+      </Route>
+    </Routes>
   );
 };
 

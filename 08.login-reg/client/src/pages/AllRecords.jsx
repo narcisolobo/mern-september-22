@@ -1,5 +1,13 @@
+import { useContext } from 'react';
+import UserContext from '../context/UserContext';
+
 const AllRecords = () => {
-  return <div>AllRecords</div>;
+  const { userState } = useContext(UserContext);
+  return (
+    <div>
+      <h1>{userState.username} {userState.userId}</h1>
+    </div>
+  );
 };
 
 export default AllRecords;

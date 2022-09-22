@@ -5,7 +5,7 @@ import {
   INPUT_CHANGE,
   initialLoginForm,
   formReducer,
-} from '../reducers/reducers';
+} from '../reducers/formReducers';
 
 const Login = () => {
   const baseUrl = useOutletContext();
@@ -20,61 +20,63 @@ const Login = () => {
   };
 
   return (
-    <div className="row justify-content-center mt-3">
-      <div className="col-lg-6 col-md-8 col-sm-12">
-        <div className="card">
-          <h5 className="card-header">LOGIN</h5>
-          <div className="card-body">
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email:
-                </label>
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  className="form-control"
-                  value={formState.email}
-                  onChange={e =>
-                    dispatch({
-                      type: INPUT_CHANGE,
-                      payload: { name: e.target.name, value: e.target.value },
-                    })
-                  }
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="password" className="form-label">
-                  Password:
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  className="form-control"
-                  value={formState.password}
-                  onChange={e =>
-                    dispatch({
-                      type: INPUT_CHANGE,
-                      payload: { name: e.target.name, value: e.target.value },
-                    })
-                  }
-                />
-              </div>
-              <div className="d-flex justify-content-end">
-                <input
-                  type="submit"
-                  value="SUBMIT"
-                  className="btn btn-success"
-                />
-              </div>
-            </form>
+    <div className="container">
+      <div className="row justify-content-center mt-3">
+        <div className="col-lg-6 col-md-8 col-sm-12">
+          <div className="card">
+            <h5 className="card-header">LOGIN</h5>
+            <div className="card-body">
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email:
+                  </label>
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    className="form-control"
+                    value={formState.email}
+                    onChange={e =>
+                      dispatch({
+                        type: INPUT_CHANGE,
+                        payload: { name: e.target.name, value: e.target.value },
+                      })
+                    }
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="password" className="form-label">
+                    Password:
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    className="form-control"
+                    value={formState.password}
+                    onChange={e =>
+                      dispatch({
+                        type: INPUT_CHANGE,
+                        payload: { name: e.target.name, value: e.target.value },
+                      })
+                    }
+                  />
+                </div>
+                <div className="d-flex justify-content-end">
+                  <input
+                    type="submit"
+                    value="SUBMIT"
+                    className="btn btn-success"
+                  />
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-        <div className="alert alert-light text-center">
-          Need an account?{' '}
-          <Link to={'/users/register'}>Click here to register.</Link>
+          <div className="alert alert-light text-center">
+            Need an account?{' '}
+            <Link to={'/users/register'}>Click here to register.</Link>
+          </div>
         </div>
       </div>
     </div>

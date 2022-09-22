@@ -10,7 +10,7 @@ import {
   getMe,
 } from '../controllers/user.controller.js';
 
-userRouter.get('/', authenticate, getAllUsers);
+userRouter.get('/', getAllUsers);
 userRouter.post('/register', register);
 userRouter.post('/login', login);
 userRouter.get('/logout', logout);

@@ -21,7 +21,6 @@ const formReducer = (state, action) => {
         ...state,
         [payload.name]: payload.value,
       };
-
     default:
       throw new Error('Unexpected action type.');
   }
